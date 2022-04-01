@@ -1,10 +1,13 @@
-import { AudioAction, AudioState } from "../../types/store/audio/types";
+import { AudioAction, AudioState } from "../../types/store/audioTypes";
 import { ActionTypes } from "./actionTypes";
 
-const initialState: AudioState = {
+export const initialState: AudioState = {
     bpm: 140,
     beatsMeasure: 4,
-    bars: 4
+    bars: 4,
+    racks: [
+        {id: 1, isMain: true, isActive: true, isRecording: false}
+    ]
 }
 
 const audio = (state: AudioState = initialState, action: AudioAction) => {
@@ -15,6 +18,8 @@ const audio = (state: AudioState = initialState, action: AudioAction) => {
             return {...state, beatsMeasure: action.payload}
         case ActionTypes.SET_AUDIO_BARS:
             return {...state, bars: action.payload}
+        case ActionTypes.SET_AUDIO_RACKS:
+            return {...state, racks: [...state.racks, action.payload]}
         default:
             return state;
     }

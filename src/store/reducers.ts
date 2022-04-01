@@ -1,4 +1,4 @@
-import { Action, combineReducers } from "redux";
+import { combineReducers } from "redux";
 import audioReducer from "./audio/reducer";
 
 const reducers = combineReducers({

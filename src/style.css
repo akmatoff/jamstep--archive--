@@ -20,9 +20,9 @@ a {
 .App {
     width: 100%;
     min-height: 100vh;
+    color: #efd9fc;
+    background-color: #18141d;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: #232323;
 }
