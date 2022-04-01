@@ -1,10 +1,12 @@
 import { FC } from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+
 import { RootState } from "../../../../store/store";
+import { MAX_RACKS_COUNT } from "../../../../constants/consts";
 
 const Header: FC = () => {
-    const { bpm, bars, beatsMeasure } = useSelector((state: RootState) => state.audio)
+    const { bpm, bars, beatsMeasure, racks } = useSelector((state: RootState) => state.audio)
 
     return <StyledHeader>
         
@@ -23,6 +25,11 @@ const Header: FC = () => {
                 <InfoTitle>Bars</InfoTitle>
                 <InfoValue>{bars}</InfoValue>
             </InfoContainer>
+
+            <InfoContainer>
+                <InfoTitle>Racks</InfoTitle>
+                <InfoValue>{racks.length}/{MAX_RACKS_COUNT}</InfoValue>
+            </InfoContainer>
         </InfoWrapper>
 
     </StyledHeader>
@@ -31,7 +38,7 @@ const Header: FC = () => {
 const StyledHeader = styled.div`
     position: fixed;
     background-color: #120f16;
-    width: clamp(400px, 50vw, 500px);
+    width: clamp(460px, 50vw, 500px);
     height: 60px;
     margin: 30px;
     border-radius: 30px;
@@ -46,7 +53,7 @@ const InfoWrapper = styled.div`
 `
 
 const InfoContainer = styled.div`
-    margin: 0 20px;
+    margin: 0 12px;
     display: flex;
     flex-direction: row;
     color: #efd9fc;

@@ -20,7 +20,6 @@ export const StyledRackCard = styled.div`
     background: linear-gradient(160deg, #9030df 20%, #671aa5 90%);
     box-shadow: 15px 22px 40px rgba(16, 16, 16, 0.2);
     padding: 30px;
-    font-size: 24px;
     border-radius: 40px;
     margin: 20px 20px;
     display: grid;

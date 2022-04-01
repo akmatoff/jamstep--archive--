@@ -7,14 +7,22 @@ import { AppDispatch, RootState } from "../../../../store/store";
 
 import { StyledRackCard } from "../RackCard/RackCard";
 
+import { MAX_RACKS_COUNT } from "../../../../constants/consts";
+import { Rack } from "../../../../types/store/audioTypes";
+
 const AddRack: FC = () => {
+
     const dispatch: AppDispatch = useDispatch()
 
-    const lastRackId = useSelector((state: RootState) => state.audio.racks[state.audio.racks.length - 1].id)
+    const racks = useSelector((state: RootState) => state.audio.racks)
+
+    const lastRackId = racks[racks.length - 1].id
 
     const { addRack } = bindActionCreators(audioActions, dispatch)
 
-    return <StyledAddRack onClick={() => addRack({id: lastRackId + 1, isActive: true, isMain: false, isRecording: false})}>
+    const newRack: Rack = {id: lastRackId + 1, isActive: true, isMain: false, isRecording: false}
+
+    return <StyledAddRack onClick={() => racks.length < MAX_RACKS_COUNT && addRack(newRack)}>
         Add a rack
     </StyledAddRack>
 }
@@ -23,6 +31,7 @@ const StyledAddRack = styled(StyledRackCard)`
     background: #120f1624;
     border: 1px solid #efd9fc44;
     box-shadow: none;
+    font-size: 20px;
     cursor: pointer;
     
     &:hover {

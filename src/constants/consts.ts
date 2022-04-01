@@ -1,0 +1,1 @@
+export const MAX_RACKS_COUNT = 12;
