@@ -38,6 +38,7 @@ const Header: FC = () => {
 const StyledHeader = styled.div`
     position: fixed;
     background-color: #120f16;
+    background: linear-gradient(90deg, #120f16, #0e0b0f);
     width: clamp(460px, 50vw, 500px);
     height: 60px;
     margin: 30px;

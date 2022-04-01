@@ -23,13 +23,15 @@ const AddRack: FC = () => {
     const newRack: Rack = {id: lastRackId + 1, isActive: true, isMain: false, isRecording: false}
 
     return <StyledAddRack onClick={() => racks.length < MAX_RACKS_COUNT && addRack(newRack)}>
-        Add a rack
+        Add a rack...
     </StyledAddRack>
 }
 
 const StyledAddRack = styled(StyledRackCard)`
     background: #120f1624;
-    border: 1px solid #efd9fc44;
+    border-style: solid;
+    border-color: #efd9fc44;
+    border-width: 1px;
     box-shadow: none;
     font-size: 20px;
     cursor: pointer;
