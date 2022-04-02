@@ -2,6 +2,7 @@ import { ActionTypes } from '../../store/audio/actionTypes'
 
 export interface Rack {
     id: number;
+    title: string;
     isActive: boolean;
     isMain: boolean;
     isRecording: boolean;

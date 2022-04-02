@@ -20,7 +20,7 @@ const AddRack: FC = () => {
 
     const { addRack } = bindActionCreators(audioActions, dispatch)
 
-    const newRack: Rack = {id: lastRackId + 1, isActive: true, isMain: false, isRecording: false}
+    const newRack: Rack = {id: lastRackId + 1, title: 'Rack ' + Number(lastRackId + 1), isActive: true, isMain: false, isRecording: false}
 
     return <StyledAddRack onClick={() => racks.length < MAX_RACKS_COUNT && addRack(newRack)}>
         Add a rack...

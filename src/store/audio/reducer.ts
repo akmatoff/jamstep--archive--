@@ -6,7 +6,7 @@ export const initialState: AudioState = {
     beatsMeasure: 4,
     bars: 4,
     racks: [
-        {id: 1, isMain: true, isActive: true, isRecording: false}
+        {id: 1, title: 'Main Rack', isMain: true, isActive: true, isRecording: false}
     ]
 }
 
