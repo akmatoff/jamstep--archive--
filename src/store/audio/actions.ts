@@ -10,3 +10,30 @@ export const addRack = (rack: Rack) => {
         })
     }
 }
+
+export const changeBpm = (bpm: number) => {
+    return (dispatch: Dispatch<AudioAction>) => {
+        dispatch({
+            type: ActionTypes.SET_AUDIO_BPM,
+            payload: bpm
+        })
+    }
+}
+
+export const changeBeatsMeasure = (beatsMeasure: number) => {
+    return (dispatch: Dispatch<AudioAction>) => {
+        dispatch({
+            type: ActionTypes.SET_AUDIO_BEATS_MEASURE,
+            payload: beatsMeasure
+        })
+    }
+}
+
+export const changeBars = (bars: number) => {
+    return (dispatch: Dispatch<AudioAction>) => {
+        dispatch({
+            type: ActionTypes.SET_AUDIO_BARS,
+            payload: bars
+        })
+    }
+}
