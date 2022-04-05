@@ -6,6 +6,7 @@ import { bindActionCreators } from "redux";
 import { AppDispatch, RootState } from "../../../../store/store";
 import { MAX_BARS, MAX_BEATS_MEASURE, MAX_BPM, MAX_RACKS_COUNT, MIN_BARS, MIN_BEATS_MEASURE, MIN_BPM } from "../../../../constants/consts";
 import * as audioActions from "../../../../store/audio/actions";
+import { showNotification } from "../../../../store/notifications/actions";
 
 const Header: FC = () => {
 
@@ -47,6 +48,7 @@ const Header: FC = () => {
 
         changeBpm(value)
         setBpmInput(value)
+        showNotification({message: 'BPM limits exceeded', type: 'WARNING'})
     }
 
     const onBeatsMeasureBlur = (e: FormEvent<HTMLInputElement>) => {
