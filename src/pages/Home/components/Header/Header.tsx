@@ -78,7 +78,7 @@ const Header: FC = () => {
             </InfoContainer>
 
             <InfoContainer>
-                <InfoTitle>Beats Measure</InfoTitle>
+                <InfoTitle>Beats</InfoTitle>
                 <InfoInput value={beatsMeasureInput} onChange={onBeatsMeasureChange} onBlur={onBeatsMeasureBlur} />
             </InfoContainer>
 
@@ -100,9 +100,10 @@ const StyledHeader = styled.div`
     position: fixed;
     background-color: #120f16;
     background: linear-gradient(90deg, #120f16, #0e0b0f);
-    width: clamp(460px, 50vw, 550px);
+    width: clamp(370px, 50vw, 550px);
     height: 60px;
     margin: 30px;
+    padding: 15px;
     border-radius: 30px;
     display: flex;
     flex-direction: row;
@@ -112,15 +113,21 @@ const StyledHeader = styled.div`
 const InfoWrapper = styled.div`
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 `
 
 const InfoContainer = styled.div`
-    margin: 0 8px;
+    margin: 0 6px;
     display: flex;
     flex-direction: row;
     color: #efd9fc;
     cursor: pointer;
     user-select: none;
+
+    @media screen and (max-width: 900px) {
+        flex-direction: column;
+    }
 `
 
 const InfoTitle = styled.div`
@@ -128,7 +135,8 @@ const InfoTitle = styled.div`
 `
 
 const InfoValue = styled.div`
-    margin-left: 5px;
+    width: 100%;
+    margin-left: 12px;
 `
 
 const InfoInput = styled.input`

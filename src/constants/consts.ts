@@ -1,4 +1,4 @@
-export const MAX_RACKS_COUNT: number = 12;
+export const MAX_RACKS_COUNT: number = 6;
 export const MAX_BPM: number = 200;
 export const MIN_BPM: number = 30;
 export const MAX_BEATS_MEASURE: number = 8;
